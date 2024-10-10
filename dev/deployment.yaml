@@ -1,0 +1,18 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myapp-argocd
+spec:
+  selector:
+    matchLabels:
+      app: myapp-argocd
+  template:
+    metadata:
+      labels:
+        app: myapp-argocd
+    spec:
+      containers:
+      - name: myapp-argocd
+        image: quyetjs/lab_argocd:tag
+        ports:
+        - containerPort: 8080
