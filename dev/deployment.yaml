@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: quyetjs/lab_argocd:v1.0.2
+        image: quyetjs/lab_argocd:latest
         ports:
         - containerPort: 8080
