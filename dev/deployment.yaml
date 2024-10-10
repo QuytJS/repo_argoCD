@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: myapp-argocd
 spec:
   replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
