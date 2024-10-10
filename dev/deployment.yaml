@@ -1,16 +1,16 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-argocd
 spec:
+  replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
     matchLabels:
-      app: myapp-argocd
-      replicas: 2
+      app: myapp-argocd  # matchLabels chỉ chứa nhãn để khớp với Pod
   template:
     metadata:
       labels:
-        app: myapp-argocd
+        app: myapp-argocd  # Các Pod sẽ có nhãn này
     spec:
       containers:
       - name: myapp-argocd
