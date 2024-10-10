@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp-argocd-1
+        app: myapp-argocd
     spec:
       containers:
       - name: myapp-argocd
