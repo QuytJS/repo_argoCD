@@ -1,11 +1,12 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: myapp-argocd-1
+  name: myapp-argocd
 spec:
   selector:
     matchLabels:
-      app: myapp-argocd-1
+      app: myapp-argocd
+      replicas: 2
   template:
     metadata:
       labels:
