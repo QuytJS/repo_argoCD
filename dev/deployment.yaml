@@ -6,14 +6,14 @@ spec:
   replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
     matchLabels:
-      app: myapp-deployment  # matchLabels chỉ chứa nhãn để khớp với Pod
+      app: myapp  # matchLabels chỉ chứa nhãn để khớp với Pod
   template:
     metadata:
       labels:
-        app: myapp-deployment # Các Pod sẽ có nhãn này
+        app: myapp # Các Pod sẽ có nhãn này
     spec:
       containers:
-      - name: myapp-deployment
-        image: quyetjs/lab_argocd:tag
+      - name: myapp
+        image: nginx:latest
         ports:
         - containerPort: 8080
