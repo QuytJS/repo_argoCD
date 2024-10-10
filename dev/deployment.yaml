@@ -16,7 +16,7 @@ spec:
       - name: myapp-argocd
         image: quyetjs/lab_argocd:tag
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         env:
           - name: ENV
             value: dev
