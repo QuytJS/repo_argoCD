@@ -25,12 +25,12 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthz
-            port: 8080
+            port: 80
           initialDelaySeconds: 10
           periodSeconds: 30
         readinessProbe: # Thêm readiness probe để kiểm tra container có sẵn sàng phục vụ không
           httpGet:
             path: /ready
-            port: 8080
+            port: 80
           initialDelaySeconds: 5
           periodSeconds: 10
