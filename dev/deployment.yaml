@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myapp-deployment
 spec:
-  replicas: 4  # Số lượng replicas phải được đặt ở đây
+  replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
     matchLabels:
       app: myapp-deployment  # matchLabels chỉ chứa nhãn để khớp với Pod
