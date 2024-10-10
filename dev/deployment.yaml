@@ -6,7 +6,7 @@ spec:
   replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
     matchLabels:
-      app: myapp  # matchLabels chỉ chứa nhãn để khớp với Pod
+      app: myapp-deployment  # matchLabels chỉ chứa nhãn để khớp với Pod
   template:
     metadata:
       labels:
