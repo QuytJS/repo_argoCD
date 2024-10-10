@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: myapp # Các Pod sẽ có nhãn này
+        app: myapp-deployment # Các Pod sẽ có nhãn này
     spec:
       containers:
       - name: myapp
