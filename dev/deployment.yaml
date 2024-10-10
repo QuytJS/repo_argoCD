@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-argocd
+  name: myapp-argocd-a
 spec:
   replicas: 2  # Số lượng replicas phải được đặt ở đây
   selector:
     matchLabels:
-      app: myapp-argocd  # matchLabels chỉ chứa nhãn để khớp với Pod
+      app: myapp-argocd-a  # matchLabels chỉ chứa nhãn để khớp với Pod
   template:
     metadata:
       labels:
-        app: myapp-argocd  # Các Pod sẽ có nhãn này
+        app: myapp-argocd-a # Các Pod sẽ có nhãn này
     spec:
       containers:
-      - name: myapp-argocd
-        image: quyetjs/lab_argocd:tag
+      - name: myapp-argocd-a
+        image: quyetjs/lab:tag
         ports:
         - containerPort: 8080
