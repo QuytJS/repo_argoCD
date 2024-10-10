@@ -1,36 +1,19 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: myapp_argocd
 spec:
   selector:
     matchLabels:
-      app: myapp-argocd
-  replicas: 3
+      app: myapp
+  replicas: 2
   template:
     metadata:
       labels:
-        app: myapp-argocd
+        app: myapp
     spec:
       containers:
-      - name: myapp-argocd
+      - name: myapp
         image: quyetjs/lab_argocd:v1.0
         ports:
         - containerPort: 8080
-        env:
-          - name: ENV
-            value: dev
-          - name: APP_VERSION
-            value: tag
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          initialDelaySeconds: 10
-          periodSeconds: 30
-        readinessProbe: # Thêm readiness probe để kiểm tra container có sẵn sàng phục vụ không
-          httpGet:
-            path: /ready
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
