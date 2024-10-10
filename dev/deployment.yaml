@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: myapp-argocd
-        image: quyetjs/lab_argocd:tag
+        image: quyetjs/lab_argocd:v1.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
           - name: ENV
             value: dev
@@ -25,12 +25,12 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthz
-            port: 80
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 30
         readinessProbe: # Thêm readiness probe để kiểm tra container có sẵn sàng phục vụ không
           httpGet:
             path: /ready
-            port: 80
+            port: 8080
           initialDelaySeconds: 5
           periodSeconds: 10
